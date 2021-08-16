@@ -1,0 +1,19 @@
+---
+- name: ensure Java is installed
+  yum:
+    name: "java-1.8.0-openjdk"
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: download deb package
+  get_url:
+    dest: "/etc/{{ elasticsearch_rpm_file }}"
+    url: "https://artifacts.elastic.co/downloads/elasticsearch/{{ elasticsearch_rpm_file }}" 
+    checksum: "sha512:https://artifacts.elastic.co/downloads/elasticsearch/{{ elasticsearch_rpm_file }}.sha512"
+  become: yes
+
+- name: install from deb package
+  apt:
+    deb: "/etc/{{ elasticsearch_rpm_file }}"
+  become: yes

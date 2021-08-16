@@ -1,0 +1,8 @@
+node_name: node01
+is_master_node: true
+
+elasticsearch_rpm_version: 7.14.0
+elasticsearch_rpm_file: elasticsearch-{{ elasticsearch_rpm_version }}-x86_64.rpm
+cluster_name: cluster
+elasticsearch_http_port_range: 9200-9300
+
