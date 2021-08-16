@@ -1,5 +1,5 @@
 from flask import Flask, Response
-from routes import index, document
+from routes import index_actions, document_actions
 from elasticsearch import Elasticsearch
 
 
@@ -9,12 +9,12 @@ with app.app_context():
     es = Elasticsearch()
     
     
-app.register_blueprint(index)
-app.register_blueprint(document)
+app.register_blueprint(index_actions)
+app.register_blueprint(document_actions)
 
 @app.route("/")
 def index():
-    return "Hello to my Elastic app!"
+    return "Welcome to my Elastic app!"
 
 def run():
     app.run(host='0.0.0.0', port=8080)
