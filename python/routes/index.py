@@ -13,18 +13,18 @@ def fetch_indices():
 def fetch_index(index_name):
     return Response(json.dumps(get_index(index_name)), 200)
 
-@index.route('/index')
+@index.route('/index',methods = ['PUT'])
 def update_index(index_name):
     response = put_index(request.get_json())
     return Response(json.dumps(put_index(reponse["name"], response["scheme"])), 200)
   
   
-@index.route('/index')
+@index.route('/index', methods = ['POST'])
 def create_index():
     response = post_index(request.get_json())
     return Response(json.dumps(response), 200)
   
   
-@index.route('/names/<index_name>')
+@index.route('/index/<index_name>', methods = ['DELETE'])
 def remove_index(index_name):
     return Response(json.dumps(delete_index(index_name)), 200)
