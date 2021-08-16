@@ -2,7 +2,7 @@ from flask import Blueprint, Response, json, request
 
 from crud import get_indices, get_index, put_index, post_index, delete_index
 
-index = Blueprint('index', __name__)
+index_actions = Blueprint('index', __name__)
 
 @index.route('/index')
 def fetch_indices():
