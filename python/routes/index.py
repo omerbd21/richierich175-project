@@ -1,6 +1,6 @@
 from flask import Blueprint, Response, json, request
 
-from crud import get_indices, get_index, put_index, post_index, delete_index
+from crud import get_indices, get_index, post_index, delete_index
 
 index_actions = Blueprint('index_actions', __name__)
 
@@ -12,16 +12,13 @@ def fetch_indices():
 @index.route('/index/<index_name>')
 def fetch_index(index_name):
     return Response(json.dumps(get_index(index_name)), 200)
-
-@index.route('/index',methods = ['PUT'])
-def update_index():
-    response = put_index(request.get_json())
-    return Response(json.dumps(put_index(reponse["name"], response["scheme"])), 200)
   
   
 @index.route('/index', methods = ['POST'])
 def create_index():
-    response = post_index(request.get_json())
+    index_name = request.get_json()["name"]
+    index_scheme = request.get_json()["scheme"]
+    response = post_index(index_name, index_scheme)
     return Response(json.dumps(response), 200)
   
   
