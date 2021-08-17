@@ -9,9 +9,9 @@ def fetch_documents(index_name):
     return Response(json.dumps(get_documents(index_name)), 200)
   
   
-@document.route('/document/<document_name>')
-def fetch_document(document_name):
-    return Response(json.dumps(get_document(document_name)), 200)
+@document.route('/document/<document_id>')
+def fetch_document(document_id):
+    return Response(json.dumps(get_document(document_id)), 200)
   
   
 @document.route('/document',methods = ['POST'])
