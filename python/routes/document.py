@@ -4,9 +4,9 @@ from crud import get_documents, get_document, post_document, delete_document
 
 document_actions = Blueprint('document_actions', __name__)
 
-@document.route('/document')
-def fetch_documents():
-    return Response(json.dumps(get_documents()), 200)
+@document.route('/document/<index_name>')
+def fetch_documents(index_name):
+    return Response(json.dumps(get_documents(index_name)), 200)
   
   
 @document.route('/document/<document_name>')
