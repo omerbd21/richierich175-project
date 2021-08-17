@@ -4,12 +4,11 @@ The API will include these functions:
 1. Create index
 2. Get all indexes
 3. Get one index by name
-4. Update index scheme
-5. Delete index
-6. Get document by id
-7. Get all documents in index
-8. Create document
-9. Delete document
+4. Delete index
+5. Get document by id
+6. Get all documents in index
+7. Create document
+8. Delete document
 
 Elastic doumentation:
 https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html
