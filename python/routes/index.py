@@ -14,7 +14,7 @@ def fetch_index(index_name):
     return Response(json.dumps(get_index(index_name)), 200)
 
 @index.route('/index',methods = ['PUT'])
-def update_index(index_name):
+def update_index():
     response = put_index(request.get_json())
     return Response(json.dumps(put_index(reponse["name"], response["scheme"])), 200)
   
