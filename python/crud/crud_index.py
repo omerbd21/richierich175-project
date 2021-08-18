@@ -1,5 +1,4 @@
-from elasticsearch import Elasticsearch
-
+# actual crud functions, exported by __init__.py and called by routes
 
 def get_indices():
   return current_app.es.indices.get_alias("*")
