@@ -1,3 +1,4 @@
+# The Dockerfile takes an image of python 3.9 and runs the app on it
 FROM python:3.9
 
 RUN mkdir /app
