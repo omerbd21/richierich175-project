@@ -2,8 +2,10 @@ from flask import Blueprint, Response, json, request
 
 from crud import get_indices, get_index, post_index, delete_index
 
+# Create the blueprint
 index_actions = Blueprint('index_actions', __name__)
 
+# All routes are here, they basically just call the crud functions. Request objects are coming from the actual api request (see from flask import request)
 @index.route('/index')
 def fetch_indices():
     return Response(json.dumps(get_indices()), 200)
