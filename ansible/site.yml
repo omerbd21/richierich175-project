@@ -1,0 +1,6 @@
+---
+# Main file for ansible is site.yml. This just imports the tasks from tasks/main.yml and runs them
+- hosts: all
+  tasks:
+    - name: install elastic
+      import_tasks: tasks/main.yml
